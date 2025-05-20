@@ -1,0 +1,13 @@
+CompileFlags:
+  Add:
+    - "-I/opt/devkitpro/libctru/include/"
+    - "-I/opt/devkitpro/devkitARM/include/"
+    - "-I/opt/devkitpro/devkitARM/arm-none-eabi/include/"
+    - "-I/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/15.1.0/include/"
+    - "-Wall"
+    - "-Wextra"
+Diagnostics:
+  UnusedIncludes: Strict
+Index:
+  Background: Build
+  StandardLibrary: Yes

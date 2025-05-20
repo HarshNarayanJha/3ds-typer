@@ -1,0 +1,36 @@
+// Static tasks configuration.
+//
+// Example:
+[
+	{
+		"label": "Make",
+		"command": "make",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "no_focus",
+		"reveal_target": "dock",
+		"hide": "on_success",
+		"shell": "system",
+		"tags": []
+	},
+	{
+		"label": "Run in Mandarine",
+		"command": "make && mandarine 3ds-typer.3dsx",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "no_focus",
+		"hide": "on_success",
+		"shell": "system",
+		"tags": []
+	},
+	{
+		"label": "Run on 3DS",
+		"command": "make && 3dslink 3ds-typer.3dsx",
+		"use_new_terminal": false,
+		"allow_concurrent_runs": false,
+		"reveal": "no_focus",
+		"hide": "on_success",
+		"shell": "system",
+		"tags": []
+	}
+]
