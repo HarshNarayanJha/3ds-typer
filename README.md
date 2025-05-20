@@ -28,11 +28,11 @@ To exit the game, press `START`
 
 ## Roadmap
 
-- [ ] Learn C++
-- [ ] Familiarize with 3DS homebrew app lifecycle
-- [ ] Figure out drawing shapes with citro2d
-- [ ] Basic game logic
-- [ ] Implement game loop
+- [x] Learn C++
+- [x] Familiarize with 3DS homebrew app lifecycle
+- [x] Figure out drawing shapes with citro2d
+- [x] Basic game logic
+- [x] Implement game loop
 - [ ] Draw text
 - [ ] Add some sound (music + fx)
 - [ ] Make this actually feel like a game
