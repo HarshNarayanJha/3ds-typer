@@ -40,9 +40,30 @@ class GameManager {
 
     GameManager();
     ~GameManager();
+
+    /** @brief Initializes the GameManager. Needs to be called at the beginning of game Once.
+     *  @remarks Initializes rendering engines, console, srand and text buffers
+     */
     void Init();
+
+    /** @brief Prepares drawing functions by clearing buffers
+     *  @remarks This needs to be called at the start of each frame, before drawing anything on the screen
+     */
     void beginDraw();
+
+    /** @brief Main game loop. Needs to be called each frame
+     *  @remarks Calls private methods to draw things to the screen. Call this after `beginDraw()`
+     */
     void update();
+
+    /** @brief Handles input to update game state. Needs to be called each frame
+     *  @param[in] keysDown Keys pressed this frame.
+     *  @remarks This needs to be done only once in the program if citro2d is the sole user of the GPU.
+     */
     void handleInput(u32 keysDown);
+
+    /** @brief Deinitializes the GameManager. Needs to be called at the end of game for cleanup Once.
+     *  @remarks Deinitializes rendering engines, console, srand and text buffers
+     */
     void deInit();
 };

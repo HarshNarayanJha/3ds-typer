@@ -23,6 +23,7 @@ GameManager::~GameManager() {
 }
 
 void GameManager::Init() {
+    // initialize graphics
     gfxInitDefault();
     C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);
     C2D_Init(C2D_DEFAULT_MAX_OBJECTS);
@@ -34,6 +35,7 @@ void GameManager::Init() {
     // initialize random seed
     srand(time(nullptr));
 
+    // create top screen rendering target
     top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
 }
 
