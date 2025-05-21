@@ -39,7 +39,7 @@ To exit the game, press `START`
 - [ ] Figure out bottom screen use
 - [ ] Add icons
 - [ ] Publish to the universal store/h-shop/homebrew store/
-- [ ] Make the C++ code more structures (create other cpp files and header files)
+- [x] Make the C++ code more structures (create other cpp files and header files)
 
 ## Why made this
 
