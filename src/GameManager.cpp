@@ -22,6 +22,27 @@ GameManager::~GameManager() {
     }
 }
 
+void GameManager::Init() {
+    gfxInitDefault();
+    C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);
+    C2D_Init(C2D_DEFAULT_MAX_OBJECTS);
+    C2D_Prepare();
+
+    //Initialize console on bottom screen. Using NULL as the second argument tells the console library to use the internal console structure as current one
+    consoleInit(GFX_BOTTOM, nullptr);
+
+    // initialize random seed
+    srand(time(nullptr));
+
+    top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
+}
+
+void GameManager::beginDraw() {
+    C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
+    C2D_TargetClear(top, clrClear);
+    C2D_SceneBegin(top);
+}
+
 void GameManager::update() {
     drawStars();
     trySpawnNewComet();
@@ -52,6 +73,12 @@ void GameManager::handleInput(u32 keysDown) {
             }
         }
     }
+}
+
+void GameManager::deInit() {
+    C2D_Fini();
+    C3D_Fini();
+    gfxExit();
 }
 
 void GameManager::trySpawnNewComet() {

@@ -18,6 +18,10 @@
 
 class GameManager {
   private:
+    // renderer
+    C3D_RenderTarget* top;
+
+    // game entities
     Star*               stars[NUM_STARS];
     std::vector<Comet*> comets;
 
@@ -36,6 +40,9 @@ class GameManager {
 
     GameManager();
     ~GameManager();
+    void Init();
+    void beginDraw();
     void update();
     void handleInput(u32 keysDown);
+    void deInit();
 };

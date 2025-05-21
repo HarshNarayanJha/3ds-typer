@@ -93,5 +93,6 @@ CheckOptions:
   readability-identifier-naming.EnumCase: CamelCase
   readability-identifier-naming.EnumConstantCase: UPPER_CASE
   readability-identifier-naming.FunctionCase: camelBack
+  readability-identifier-naming.FunctionIgnoredRegexp: Init
   readability-identifier-naming.NamespaceCase: CamelCase
   readability-identifier-naming.StructCase: CamelCase

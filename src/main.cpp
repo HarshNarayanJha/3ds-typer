@@ -9,7 +9,6 @@
 
 #include <3ds.h>
 #include <citro2d.h>
-#include <stdlib.h> // NOLINT
 #include <cstdio>
 
 #include "Comet.hpp"
@@ -56,25 +55,14 @@ int main(int argc, char** argv) {
                               "KEY_CPAD_UP",
                               "KEY_CPAD_DOWN"};
 
-    // Initialize services
-    gfxInitDefault();
-    C3D_Init(C3D_DEFAULT_CMDBUF_SIZE);
-    C2D_Init(C2D_DEFAULT_MAX_OBJECTS);
-    C2D_Prepare();
+    GameManager gm;
 
-    //Initialize console on bottom screen. Using NULL as the second argument tells the console library to use the internal console structure as current one
-    consoleInit(GFX_BOTTOM, nullptr);
-
-    // initialize random seed
-    srand(time(nullptr));
-
-    C3D_RenderTarget* top = C2D_CreateScreenTarget(GFX_TOP, GFX_LEFT);
+    // Initialize
+    gm.Init();
 
     printf("\x1b[1;1HPress Start to exit.\n");
     printf("\x1b[2;1HWelcome to my 3ds-typer game.\n");
     printf("\x1b[3;1HPress the keys in the comet to destroy them.\n");
-
-    GameManager gm;
 
     // Main loop
     while (aptMainLoop()) {
@@ -96,28 +84,21 @@ int main(int argc, char** argv) {
         //Read the CirclePad position
         hidCircleRead(&pos);
 
-        // begin the game
-        C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
-        C2D_TargetClear(top, gm.clrClear);
-        C2D_SceneBegin(top);
+        // begin drawing
+        gm.beginDraw();
 
         // run the game loop
-        gm.update();
         gm.handleInput(kDown);
+        gm.update();
 
         C3D_FrameEnd(0);
 
-        // Flush and swap framebuffers
-        // gfxFlushBuffers();
-        // gfxSwapBuffers();
-
-        //Wait for VBlank
+        //Wait for VBlank (for 30fps)
         // gspWaitForVBlank();
     }
 
-    // Exit services
-    C2D_Fini();
-    C3D_Fini();
-    gfxExit();
+    // Deinitialize
+    gm.deInit();
+
     return 0;
 }
