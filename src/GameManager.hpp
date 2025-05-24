@@ -20,6 +20,8 @@ class GameManager {
   private:
     // renderer
     C3D_RenderTarget* top;
+    C2D_TextBuf       staticBuf, dynamicBuf;
+    C2D_Font          font;
 
     // game entities
     Star*               stars[NUM_STARS];
@@ -29,8 +31,11 @@ class GameManager {
     void drawStars();
     void drawComets();
 
+    void drawText();
+
   public:
     u32 clrWhite = C2D_Color32(0xFF, 0xFF, 0xFF, 0xFF);
+    u32 clrBlack = C2D_Color32(0x00, 0x00, 0x00, 0xFF);
     u32 clrGray  = C2D_Color32(0xE8, 0xE8, 0xE8, 0xFF);
     u32 clrGreen = C2D_Color32(0x00, 0xFF, 0x00, 0xFF);
     u32 clrRed   = C2D_Color32(0xFF, 0x00, 0x00, 0xFF);

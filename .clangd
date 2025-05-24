@@ -1,13 +1,37 @@
 CompileFlags:
   Add:
+    - "-xc++"
+    - "-std=gnu++11"
+
+    - "-isystem/opt/devkitpro/libctru/include/"
+    - "-isystem/opt/devkitpro/devkitARM/include/"
+    - "-isystem/opt/devkitpro/devkitARM/arm-none-eabi/include/"
+    - "-isystem/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/15.1.0/include/"
+    - "-isystem/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/15.1.0/include-fixed/"
+
     - "-I/opt/devkitpro/libctru/include/"
     - "-I/opt/devkitpro/devkitARM/include/"
     - "-I/opt/devkitpro/devkitARM/arm-none-eabi/include/"
     - "-I/opt/devkitpro/devkitARM/lib/gcc/arm-none-eabi/15.1.0/include/"
     - "-Wall"
     - "-Wextra"
+  Remove: [-W*]
+  Compiler: clang++
+
 Diagnostics:
   UnusedIncludes: Strict
+
 Index:
   Background: Build
   StandardLibrary: Yes
+
+Hover:
+  ShowAKA: Yes
+
+InlayHints:
+  BlockEnd: No
+  Designators: Yes
+  Enabled: Yes
+  ParameterNames: Yes
+  DeducedTypes: Yes
+  TypeNameLimit: 24

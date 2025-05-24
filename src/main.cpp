@@ -9,15 +9,8 @@
 
 #include <3ds.h>
 #include <citro2d.h>
-#include <cstdio>
 
-#include "Comet.hpp"
 #include "GameManager.hpp"
-
-using namespace std;
-
-constexpr unsigned int Comet::COMET_KEYS[];
-constexpr u8           Comet::NUM_COMET_KEYS;
 
 int main(int argc, char** argv) {
 
