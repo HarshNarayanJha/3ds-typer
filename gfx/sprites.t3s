@@ -1,0 +1,26 @@
+--atlas -f rgba8888 -z auto
+button_a.png
+button_b.png
+button_x.png
+button_y.png
+button_l.png
+button_r.png
+button_zl.png
+button_zr.png
+button_dup.png
+button_dleft.png
+button_ddown.png
+button_dright.png
+stick_left.png
+stick_left_left.png
+stick_left_down.png
+stick_left_right.png
+stick_left_up.png
+stick_right.png
+stick_right_left.png
+stick_right_down.png
+stick_right_right.png
+stick_right_up.png
+button_select.png
+button_start.png
+button_t.png

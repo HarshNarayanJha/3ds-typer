@@ -26,6 +26,11 @@ For step 3 to work, you would need to have an actual homebrew'd 3DS on the same 
 
 To exit the game, press `START`
 
+## Development
+
+Project will show errors. This is because the sprites header file at `src/sprites.hpp` is a symlink to `build/sprites.h`, which is not generated until you build the project.
+It will be automatically generated sourced from `gfx/sprites.t3s`. It is a SpriteSheet.
+
 ## Roadmap
 
 - [x] Learn C++

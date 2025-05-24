@@ -53,6 +53,8 @@ int main(int argc, char** argv) {
     // Initialize
     gm.Init();
 
+    gm.LoadSpriteSheet("romfs:/gfx/sprites.t3x");
+
     printf("\x1b[1;1HPress Start to exit.\n");
     printf("\x1b[2;1HWelcome to my 3ds-typer game.\n");
     printf("\x1b[3;1HPress the keys in the comet to destroy them.\n");
